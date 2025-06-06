@@ -4,7 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Kavin Desi Valli",
+  title: "Akhil Kasturi",
   description: "Personal website of Kavin Desi Valli",
 };
 

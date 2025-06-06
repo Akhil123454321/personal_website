@@ -2,23 +2,23 @@ export async function GET(request) {
   const contactMediums = [
     {
       medium: "github",
-      username: "kavinvalli",
-      link: "https://github.com/kavinvalli",
+      username: "Akhil123454321",
+      link: "https://github.com/Akhil123454321",
     },
     {
       medium: "email",
-      username: "mail@kavin.me",
-      link: "mailto:mail@kavin.me",
+      username: "akhilkasturiwork@proton.me",
+      link: "mailto:akhilkasturiwork@proton.me",
     },
     {
-      medium: "facebook",
-      username: "kavin.valli.25",
-      link: "https://www.facebook.com/kavin.valli.25/",
+      medium: "instagram",
+      username: "akhilsk123",
+      link: "https://www.instagram.com/akhilsk123/",
     },
     {
       medium: "linkedin",
-      username: "kavinvalli",
-      link: "https://www.linkedin.com/in/kavinvalli/",
+      username: "akhil-sagaran-kasturi",
+      link: "https://www.linkedin.com/in/akhil-sagaran-kasturi/",
     },
   ];
 
