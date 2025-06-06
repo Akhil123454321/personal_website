@@ -1,3 +1,5 @@
+// This is the contents that is displayed onto the screen
+
 import Terminal from "../components/Terminal";
 
 import styles from "./Home.module.css";
@@ -6,7 +8,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1>
-        kavinvalli:$ <span className={styles.help}>type help to start</span>
+        akhilsk:$ <span className={styles.help}>type help to start</span>
       </h1>
       <p>
         Visit{" "}

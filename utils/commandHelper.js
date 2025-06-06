@@ -4,12 +4,48 @@ const COMMANDS = [
     description: "About Me",
   },
   {
+    command: "experience",
+    description: "My Work Experience",
+    flags: [
+      {
+        flag: "--internships",
+        description: "My internships and work experience",
+      },
+      {
+        flag: "--research",
+        description: "My research experience",
+      },
+      {
+        flag: "--teaching",
+        description: "My teaching experience",
+      },
+      {
+        flag: "--achievements",
+        description: "My achievements and awards",
+      }
+    ]
+  },
+  {
     command: "education",
     description: "My Education",
   },
   {
     command: "skills",
     description: "My Tech Skills",
+    flags: [
+      {
+        flag: "--languages",
+        description: "Programming languages I know",
+      },
+      {
+        flag: "--frameworks",
+        description: "Frameworks and libraries I use",
+      },
+      {
+        flag: "--certifications",
+        description: "Relevant certifications I've earned",
+      },
+    ],
   },
   {
     command: "projects",
@@ -24,17 +60,7 @@ const COMMANDS = [
     description: "Contact Me",
   },
   {
-    command: "blog",
-    description: "Visit my blog",
-  },
-  {
-    command: "youtube",
-    description: "Visit my youtube channel (@livecode247)",
-  },
-  {
-    command:
-      // 'clear <span style="color: var(--primary)">(Ctrl+L shortcut)</span>',
-      "clear",
+    command: "clear",
     description: "Clear terminal",
   },
 ];
@@ -69,6 +95,7 @@ const getContacts = async () => {
 };
 
 export const CONTENTS = {
+  // function to execute the help command
   help: () =>
     COMMANDS.map(
       (command) => `<div style="display: flex; justify-content: space-between;">
@@ -78,18 +105,41 @@ export const CONTENTS = {
     ).join("") +
     `<br />
       <div class="command">Type one of the above to view. For eg. <span style="color: var(--secondary)">about</span></div>`,
-  about: () => `My name is Kavin. I am ${getAge(
-    "December 25, 2005"
-  )} and I\'m a fullstack web developer
+  
+  // function to execute the experience command
+  about: () => `My name is Akhil. I am a ${getAge(
+    "December 8, 2003"
+  )} year old aspiring machine learning engineer and full-stack developer. I am currently based in the United States studying in Purdue University, Indiana, majoring in Computer Science - Machine Intelligence and Applied Statistics. 
     <br/><br/>
-    I love coding in Javascript, Typescript and Python, and have worked with frameworks like ReactJS, VueJS, Express, and Django. I currently use NextJS, Laravel, and NodeJS in a lot of my projects.
-    <br /><br />
-    I am a former President of <a href="https://exunclan.com" target="_blank">Exun Clan</a> ('22-23). I am a freshman at <a href="https://uwaterloo.ca/content/home" target="_blank">University of Waterloo</a>.
-    <br />
-    I am also the Chapter Officer at the <a href="https://new-delhi-space-society.github.io" target="_blank">New Delhi Space Society</a>, a chapter of the <a href="https://space.nss.org" target="_blank">National Space Society</a>. I am a core maintainer of <a href="https://typewind.vercel.app" target="_new">Typewind</a>
+    I love coding in Python, C and JavaScript and have worked with frameworks and libraries like TensorFlow, PyTorch, scikit-learn, NodeJS, ExpressJS, and Django. I currently use NextJS, Laravel, and NodeJS in a lot of my projects, and leverage machine learning tools such as TensorFlow and PyTorch for ML engineering tasks.
   `,
-  education:
-    () => `I am a high school graduate from <a href="https://dpsrkp.net" target="_blank">Delhi Public School, R.K. Puram</a> and a freshman at <a href="https://uwaterloo.ca/content/home" target="_blank">University of Waterloo</a>.`,
+
+  //function to execute the experience command
+  experience: () => {
+    const experienceFlags = COMMANDS.find(cmd => cmd.command === "experience");
+    return experienceFlags.flags
+      .map(
+        (flag) => `<div class="command">
+        <b class="command">${flag.flag}</b> - ${flag.description}
+      </div>`
+      )
+      .join("") +
+      `<br />
+      <div class="command">Type one of the above to view. For eg. <span style="color: var(--secondary)">experience --internships</span></div>`;
+  },
+
+  // function to execute the experience command with flags
+  "experience --internships": () => `
+  <div><b>CGI</b>: HTML, CSS, Node.js and PHP<br /></div>
+  <div><b>frameworks</b>: React, NextJS, Django, Express and Laravel<br /></div>
+  <div><b>database</b>: MongoDB, PostgreSQL, MySQL, and SQLite<br /></div>
+  `,
+  "experience --research": () => ``,
+  "experience --teaching": () => ``,
+  "experience --achievements": () => ``,
+
+  // function to execute the education command
+  education: () => `I am a high school graduate from <a href="https://dpsrkp.net" target="_blank">Delhi Public School, R.K. Puram</a> and a freshman at <a href="https://uwaterloo.ca/content/home" target="_blank">University of Waterloo</a>.`,
   skills: () => `
   I am experienced with Javascript, Typescript and Python and the web technologies dominating at the time:<br />
   <div class="skill"><b>core</b>: HTML, CSS, Node.js and PHP<br /></div>
