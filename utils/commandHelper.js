@@ -61,7 +61,7 @@ const COMMANDS = [
   },
 ];
 
-// function to get projects
+// HELPER FUNCTION: gets projects
 const getProjects = async () => {
   const projects = await (await fetch("/api/projects")).json();
   const projectHTML =
@@ -73,13 +73,14 @@ const getProjects = async () => {
           project.name
         }</b></a> - <b>${project.stack.join(", ")}</b>
         <p class="meaning">${project.description}</p>
-      </div>`
+      </div>
+      <br />`
       )
       .join("");
   return projectHTML;
 };
 
-// function to get contact mediums
+// HELPER FUNCTION: gets contact mediums
 const getContacts = async () => {
   const contactMediums = await (await fetch("/api/contacts")).json();
   return contactMediums
@@ -334,7 +335,7 @@ export const CONTENTS = {
     </div>
   `,
 
-
+  // calling the functions to get the projects and contacts
   projects: getProjects,
   contact: getContacts,
 
@@ -349,6 +350,8 @@ export const CONTENTS = {
     `<div class="help-command">sh: Unknown command: ${input}</div><div class="help-command">See \`help\` for info`,
 };
 
+
+// HELPER FUNCTIONS: function to calculate age from date string
 function getAge(dateString) {
   const today = new Date();
   const birthDate = new Date(dateString);
