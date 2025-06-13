@@ -9,4 +9,5 @@
 6. add tab completion
 7. implement man pages for each of the commands
 8. add redirection -- write a message and redirect it to my email
-9. 
+9. implement modification function  
+~~10. fix `ctrl-c` functionality~~

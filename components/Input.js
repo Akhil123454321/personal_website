@@ -9,10 +9,10 @@ export default function Input({
   inputValue,
   onInputChange,
   onKeyDown,
+  disabled,
 }) {
   const inputRef = useRef(null);
-
-  const isReadOnly = !!command;
+  const isReadOnly = disabled || !!command;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,12 +39,8 @@ export default function Input({
         type="text"
         className={styles.input}
         value={isReadOnly ? command : inputValue}
-        onChange={(e) => {
-          if (!isReadOnly) onInputChange(e.target.value);
-        }}
-        onKeyDown={(e) => {
-          if (!isReadOnly && onKeyDown) onKeyDown(e);
-        }}
+        onChange={(e) => !isReadOnly && onInputChange(e.target.value)}
+        onKeyDown={(e) => !isReadOnly && onKeyDown?.(e)}
         disabled={isReadOnly}
         ref={inputRef}
         autoFocus={!isReadOnly}

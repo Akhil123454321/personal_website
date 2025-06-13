@@ -68,13 +68,33 @@ export default function Terminal() {
     } else if (e.ctrlKey && e.key.toLowerCase() === "l") {
       e.preventDefault();
       setCommands([]);
+    } else if (e.ctrlKey && e.key.toLowerCase() === "c") {
+      e.preventDefault();
+      setCommands((prev) => [
+        ...prev,
+        { command: currentInput, output: "", isInterrupt: true },
+      ]);
+      setCurrentInput("");
+      setHistoryIndex(-1);
+
+      // Scroll down after rendering
+      setTimeout(() => {
+        if (terminalRef.current) {
+          terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+        }
+      }, 0);
     }
   };
 
   return (
     <div className={styles.terminal} ref={terminalRef}>
-      {commands.map(({ command, output }, index) => (
-        <Command command={command} output={output} key={index} />
+      {commands.map(({ command, output, isInterrupt }, index) => (
+        <Command
+          key={index}
+          command={command}
+          output={output}
+          isInterrupt={isInterrupt}
+        />
       ))}
       {!loading && (
         <Command
