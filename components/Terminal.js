@@ -35,8 +35,10 @@ export default function Terminal() {
     setHistoryIndex(-1);
     setCurrentInput("");
 
-    if (`${command}` in CONTENTS) {
-      output = await CONTENTS[`${command}`]();
+    const baseCommand = command.trim().split(" ")[0]; // <-- extract main command
+
+    if (baseCommand in CONTENTS) {
+      output = await CONTENTS[baseCommand](command); // pass full input as arg
     } else if (command === "clear") {
       setLoading(false);
       setCommands([]);
