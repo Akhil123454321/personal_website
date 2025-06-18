@@ -10,7 +10,7 @@ export default function Home() {
       </h1>
       <p>
         Visit{" "}
-        <a href="https://n.kavin.me" target="_blank" rel="noreferrer">
+        <a href="#" target="_blank" rel="noreferrer">
           Normal website
         </a>
       </p>
