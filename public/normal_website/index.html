@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akhil Kasturi | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #20232a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar a {
+      color: #61dafb;
+      text-decoration: none;
+      margin-top: 0.25rem;
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      background: #f4f4f4;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab {
+      background: #ccc;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background: #20232a;
+      color: white;
+    }
+
+    .content {
+      flex-grow: 1;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-y: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="/normal_website/images/profile.jpg" alt="Akhil Kasturi" />
+    <h1>Akhil Kasturi</h1>
+    <a href="mailto:akhilkasturiwork@proton.me">Email</a>
+    <a href="https://linkedin.com/in/akhil-sagaran-kasturi" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Akhil123454321" target="_blank">GitHub</a>
+  </div>
+
+  <div class="main">
+    <div class="tabs">
+      <div class="tab active" data-tab="about">about</div>
+      <div class="tab" data-tab="experience">experience</div>
+      <div class="tab" data-tab="education">education</div>
+      <div class="tab" data-tab="skills">skills</div>
+      <div class="tab" data-tab="projects">projects</div>
+      <div class="tab" data-tab="resume">resume</div>
+      <div class="tab" data-tab="contact">contact</div>
+    </div>
+
+    <div class="content" id="about">
+        <p>
+            I am Akhil Sagaran Kasturi, a passionate computer science student with a focus on machine learning, artificial intelligence, software development, and security. I thrive on solving complex problems and building intelligent systems that make a real-world impact. My journey has taken me from developing AI-driven applications to enhancing software solutions in various domains, including healthcare and education. I am committed to advancing the field of computer science through research, innovation, and collaboration.
+            <br/><br/>
+            finish
+        </p>
+    </div>
+
+    <div class="content hidden" id="experience">
+        <h3>Data Intelligence Intern, Crowe</h3>
+        <p><em>June 2025 – Present</em></p>
+        <ul>
+        </ul>
+
+        <h3>Undergraduate Research Assistant, Purdue University</h3>
+        <p><em>May 2025 – Present</em></p>
+        <ul>
+            <li>Working on a clinical AI project to automate triage decisions for HIV patients using large language models (LLaMA 3.3, DeepSeek R1).</li>
+            <li>Designed and tested human-in-the-loop correction systems for increasing safety and recall in real-world deployments.</li>
+        </ul>
+
+        <h3>Software Development Intern, CGI</h3>
+        <p><em>Jun 2024 – Aug 2024</em></p>
+        <ul>
+            <li>Built features for an internal forecasting tool using .NET (C#), React, and MySQL.</li>
+            <li>Researched and implemented Azure-based AI models (chatbot, time-series forecasting) to improve business logic automation.</li>
+        </ul>
+
+        <h3>Resident Assistant, Purdue University Residences</h3>
+        <p><em>Aug 2024 – Present</em></p>
+        <ul>
+            <li>Managed a $96K annual budget to plan events focused on mental health, diversity, and professional growth for 50+ residents.</li>
+            <li>Acted as first responder to conflict resolution and emergency situations in a multicultural housing environment.</li>
+        </ul>
+
+        <h3>Undergraduate Teaching Assistant, Purdue CS</h3>
+        <p><em>Jan 2024 – Present</em></p>
+        <ul>
+            <li>Supported 800+ students across labs and office hours, while also helping build and grade course materials.</li>
+            <li>Provided guidance on programming style, code quality, and debugging skills.</li>
+        </ul>
+
+        <h3>Python Instructor, Wonderland Education</h3>
+        <p><em>Mar 2024 – Present</em></p>
+        <ul>
+            <li>Taught Python to 5th grade students through interactive coding challenges and creative projects.</li>
+            <li>Customized curricula to suit different learning speeds and encouraged independent exploration.</li>
+        </ul>
+    </div>
+
+    <div class="content hidden" id="education">
+        <h3>Purdue University – Master of Science in Computer Science</h3>
+        <p><em>Expected Dec 2026</em><br/>
+        Specialization: Machine Intelligence and Security</p>
+
+        <h3>Purdue University – Bachelor of Science in Computer Science & Applied Statistics (Dual Degree)</h3>
+        <p><em>Expected Dec 2025</em><br/>
+        Minors: Mathematics<br/>
+        Specialization: Machine Learning<br/>
+        GPA: 3.80 / 4.0<br/>
+        Dean’s List and Semester Honors: Fall 2022 – Spring 2025</p>
+
+        <h3>Indus International School Bangalore - International Baccalaureate (IB) Diploma</h3>
+        <p><em>August 2018 - May 2022</em><br/>
+        HL Subjects: Physics, Computer Science, Mathematics Analysis and Approaches<br/>
+        SL Subjects: English Language and Literature, Spanish B, Chemistry<br/>
+        IB Score: 43.0 / 45.0 <br/>
+        Subject awards for academic excellence in Computer Science, Math, Physics, and Chemistry</p>
+    </div>
+
+    <div class="content hidden" id="skills">
+        <p><strong>Languages:</strong> Python, Java, C, C++, C#, JavaScript, SQL, Shell, R</p>
+        <p><strong>Frameworks & Tools:</strong> .NET, NodeJS, ReactJS, MySQL, MongoDB, HTML/CSS, jQuery, Git</p>
+        <p><strong>Certifications:</strong> Azure AI Fundamentals, Azure AI Associate, Google Intro to Generative AI</p>
+    </div>
+
+    <div class="content hidden" id="projects">
+        <h3>NLP Linter (2025)</h3>
+        <p>
+        Created an NLP-based code linter for C programs in Purdue CS 240. Integrated Tree-sitter for AST parsing and fine-tuned CodeBERT with a custom BILEU tokenizer to detect and enforce coding standards.
+        </p>
+
+        <h3>HireHack (2024)</h3>
+        <p>
+        Developed a Chrome extension offering real-time interview feedback using facial emotion recognition, speech tone analysis, and lexical cues. Integrated a neural net to suggest personalized improvements.
+        </p>
+
+        <h3>UniLens (2023)</h3>
+        <p>
+        Built a full-stack college research app using ReactJS, NodeJS, and MongoDB. Leveraged GPT APIs and clustering algorithms to personalize school suggestions and support application planning.
+        </p>
+
+        <h3>Diabetic Retinopathy Analyzer (2021)</h3>
+        <p>
+        Created a CNN model in TensorFlow and Keras that classifies retinal scans by retinopathy severity and macular edema risk. Achieved 92% accuracy on a labeled dataset.
+        </p>
+    </div>
+
+    <div class="content hidden" id="resume">
+        <p>You can download my full resume below:</p>
+        <p><a href="/resume.pdf" download>📄 Download Resume (PDF)</a></p>    
+    </div>
+    
+    <div class="content hidden" id="contact">
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:akhilkasturiwork@proton.me">akhilkasturiwork@proton.me</a></li>
+            <li><strong>Phone:</strong> (317) 389-8250</li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/akhil-sagaran-kasturi" target="_blank">/akhil-sagaran-kasturi</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/Akhil123454321" target="_blank">@Akhil123454321</a></li>
+        </ul>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.add('hidden'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

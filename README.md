@@ -8,6 +8,6 @@
 - ~~Add `ctrl-r` functionality~~
 - add tab completion
 - implement man pages for each of the commands
-- ~~add redirection -- write a message and redirect it to my email~~
+- add redirection -- write a message and redirect it to my email
 - implement modification function  
 - ~~fix `ctrl-c` functionality~~
