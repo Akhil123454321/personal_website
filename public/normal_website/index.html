@@ -4,85 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akhil Kasturi | Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-    }
+ <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap');
 
-    .sidebar {
-      width: 250px;
-      background: #20232a;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-    }
+  body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background: #f5f7fa;
+    color: #2c3e50;
+  }
 
-    .sidebar img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
+  .sidebar {
+    width: 300px;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
 
-    .sidebar h1 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
+  .sidebar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid white;
+  }
 
-    .sidebar a {
-      color: #61dafb;
-      text-decoration: none;
-      margin-top: 0.25rem;
-      display: block;
-      font-size: 0.9rem;
-    }
+  .sidebar h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
 
-    .main {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
-      background: #f4f4f4;
-    }
+  .sidebar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    display: block;
+    font-size: 0.95rem;
+  }
 
-    .tabs {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
 
-    .tab {
-      background: #ccc;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+  .main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: #f5f7fa;
+    min-width: 0;
+    min-height: 0;
+  }
 
-    .tab.active {
-      background: #20232a;
-      color: white;
-    }
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
 
-    .content {
-      flex-grow: 1;
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-y: auto;
-    }
+  .tab {
+    background: #e0e0e0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+  }
 
-    .hidden {
-      display: none;
-    }
-  </style>
+  .tab:hover {
+    background: #4ca1af;
+    color: white;
+  }
+
+  .tab.active {
+    background: #2c3e50;
+    color: white;
+  }
+
+  .content {
+    flex-grow: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  h3 {
+    color: #34495e;
+    margin-top: 1.25rem;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: #4ca1af;
+  }
+</style>
 </head>
 <body>
+
   <div class="sidebar">
     <img src="/normal_website/images/profile.jpg" alt="Akhil Kasturi" />
     <h1>Akhil Kasturi</h1>
