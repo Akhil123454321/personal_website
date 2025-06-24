@@ -17,7 +17,7 @@ export async function POST(req) {
 
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: process.env.RECEIVER_EMAIL3,
+      to: "kasturi@purdue.edu",
       subject: 'New Terminal Message',
       text: message,
     });
