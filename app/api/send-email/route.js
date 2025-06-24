@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 
 export async function POST(req) {
   try {
-    console.log(`Sending email to ${process.env.RECEIVER_EMAIL3}`);
+    console.log(`Sending email to ${process.env.RECEIVER_EMAIL}`);
     const { message } = await req.json();
 
     if (!message || message.trim() === "") {
@@ -17,7 +17,7 @@ export async function POST(req) {
 
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: "kasturi@purdue.edu",
+      to: process.env.RECEIVER_EMAIL,
       subject: 'New Terminal Message',
       text: message,
     });

@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   try {
     const result = await resend.emails.send({
       from: "onboarding@resend.dev", // Or a verified domain address like 'me@yourdomain.com'
-      to: "kasturi@purdue.edu",
+      to: process.env.RECEIVER_EMAIL,
       subject: "New Terminal Message",
       html: `<p>${message}</p>`,
     });
