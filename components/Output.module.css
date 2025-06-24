@@ -1,0 +1,7 @@
+.output {
+  white-space: pre-wrap;         /* preserves newlines and allows wrapping */
+  word-break: break-word;        /* breaks long words if needed */
+  overflow-wrap: break-word;     /* ensures even better support */
+  color: var(--text-color);
+  font-family: "Fira Code", monospace;
+}

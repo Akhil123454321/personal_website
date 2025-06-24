@@ -1,17 +1,22 @@
 .terminal {
   max-height: calc(100vh - 160px);
   margin-bottom: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;              /* Prevent horizontal scroll */
+  display: flex;
+  flex-direction: column;
+  word-break: break-word;          /* Wrap long continuous words */
+  padding-right: 8px;              /* Prevent text from hugging the scrollbar */
 }
 
+/* Hide scrollbar for webkit browsers */
 .terminal::-webkit-scrollbar {
   width: 0 !important;
+  height: 0;
 }
 
+/* Firefox */
 .terminal {
-  overflow: -moz-scrollbars-none;
-}
-
-.terminal {
-  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;        /* IE and Edge */
 }

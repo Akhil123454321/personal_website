@@ -355,29 +355,34 @@ export const CONTENTS = {
 
   // function to send an email
   "contact": async (rawCommand) => {
-    // If it's just 'contact', show contact info
     if (!rawCommand.includes("--email")) {
-      return getContacts(); // existing behavior
+      return getContacts(); // fallback to static contact info
     }
 
-    // Expect: contact --email >> your message here
-    const match = rawCommand.match(/^contact\s+--email\s*>>\s*(.+)$/i);
-    if (!match || !match[1]) {
-      return "⚠️ Usage: contact --email >> your message here";
+    // Match the flags and the message
+    const match = rawCommand.match(/^contact\s+--email\s+(.*?)>>\s*"(.*)"$/);
+    if (!match) {
+      return `⚠️ Usage: contact --email --name="Your Name" --from="email@example.com" >> "Your message here"`;
     }
 
-    const message = match[1].trim();
-    if (message.length === 0) {
-      return "⚠️ Cannot send an empty message.";
+    const flags = match[1];
+    const message = match[2];
+
+    const nameMatch = flags.match(/--name="([^"]+)"/);
+    const emailMatch = flags.match(/--from="([^"]+)"/);
+
+    const name = nameMatch?.[1] || "";
+    const from = emailMatch?.[1] || "";
+
+    if (!name || !from || !message) {
+      return "⚠️ Please provide all fields: name, email, and message.";
     }
 
     try {
       const res = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, from, message }),
       });
 
       if (res.ok) {
@@ -388,7 +393,7 @@ export const CONTENTS = {
       }
     } catch (err) {
       console.error("Request error:", err);
-      return "❌ Error sending your message. Please try again later.";
+      return "❌ Error sending your message. Try again later.";
     }
   }
 };

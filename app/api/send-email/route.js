@@ -1,14 +1,11 @@
-// app/api/send-email/route.js
-
 import { Resend } from 'resend';
 
 export async function POST(req) {
   try {
-    console.log(`Sending email to ${process.env.RECEIVER_EMAIL}`);
-    const { message } = await req.json();
+    const { name, from, message } = await req.json();
 
-    if (!message || message.trim() === "") {
-      return new Response(JSON.stringify({ error: "Message is required" }), {
+    if (!name || !from || !message || message.trim() === "") {
+      return new Response(JSON.stringify({ error: "Name, email, and message are required" }), {
         status: 400,
       });
     }
@@ -18,8 +15,13 @@ export async function POST(req) {
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: process.env.RECEIVER_EMAIL,
-      subject: 'New Terminal Message',
-      text: message,
+      subject: `New Terminal Message from ${name}`,
+      html: `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${from}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
     });
 
     return new Response(JSON.stringify({ success: true, data }), {
