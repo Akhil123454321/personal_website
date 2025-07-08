@@ -2,8 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CONTENTS } from "../utils/commandHelper";
+import { CommandTrie } from "../utils/trie";
 import Command from "./Command";
 import styles from "./Terminal.module.css";
+import { useMemo } from "react";
+
 
 export default function Terminal() {
   const [commands, setCommands] = useState([]);
@@ -18,6 +21,12 @@ export default function Terminal() {
   const [searchMatchIndex, setSearchMatchIndex] = useState(0);
 
   const terminalRef = useRef(null);
+
+  const commandTrie = useMemo(() => {
+    const trie = new CommandTrie();
+    Object.keys(CONTENTS).forEach((cmd) => trie.insert(cmd));
+    return trie;
+  }, []);
 
   const escapeHTML = (str) =>
     str
@@ -35,12 +44,23 @@ export default function Terminal() {
     setHistoryIndex(-1);
     setCurrentInput("");
 
-    if (`${command}` in CONTENTS) {
-      output = await CONTENTS[`${command}`]();
+    // Check for redirection format: message >> command
+    const redirectMatch = command.match(/^(.*?)>>\s*(.+)$/);
+    if (redirectMatch) {
+      const message = redirectMatch[1].trim();
+      const targetCommand = redirectMatch[2].trim();
+
+      if (targetCommand.startsWith("contact --email")) {
+        output = await CONTENTS.contact(command)
+      } else {
+        output = CONTENTS.error(escapeHTML(command));
+      }
     } else if (command === "clear") {
       setLoading(false);
       setCommands([]);
       return;
+    } else if (command in CONTENTS) {
+      output = await CONTENTS[command]();
     } else {
       output = CONTENTS.error(escapeHTML(command));
     }
@@ -57,6 +77,7 @@ export default function Terminal() {
     const allCommands = Object.keys(CONTENTS);
     return allCommands.filter((cmd) => cmd.startsWith(input));
   };
+
 
   const handleKeyDown = (e) => {
     if (e.key === "ArrowUp") {
@@ -107,24 +128,32 @@ export default function Terminal() {
         setSearchMatchIndex((prev) => (prev + 1) % searchMatches.length);
       }
     } else if (e.key === "Tab") {
-      e.preventDefault();
-      const matches = getMatchingCommands(currentInput);
-      if (matches.length === 1) {
-        setCurrentInput(matches[0]);
-      } else if (matches.length > 1) {
-        const formattedMatches = matches
-          .map((cmd) => {
-            const desc = CONTENTS[cmd]?.description || "";
-            return `<div><b>${cmd.padEnd(15)}</b> ${desc}</div>`;
-          })
-          .join("");
-        setCommands((prev) => [
-          ...prev,
-          { command: currentInput, output: formattedMatches },
-        ]);
-        setCurrentInput(currentInput);
+        e.preventDefault();
+        const matches = commandTrie.search(currentInput);
+
+        if (matches.length === 1) {
+          // Single match → autocomplete
+          setCurrentInput(matches[0]);
+        } else if (matches.length > 1) {
+          // First tab → try to extend common prefix
+          const commonPrefix = commandTrie.getCommonPrefix(currentInput);
+          if (commonPrefix !== currentInput) {
+            setCurrentInput(commonPrefix);
+          } else {
+            // Second tab → list all matches
+            const formattedMatches = matches
+              .map((cmd) => {
+                const desc = CONTENTS[cmd]?.description || "";
+                return `<div><b>${cmd.padEnd(15)}</b> ${desc}</div>`;
+              })
+              .join("");
+            setCommands((prev) => [
+              ...prev,
+              { command: currentInput, output: formattedMatches },
+            ]);
+          }
+        }
       }
-    }
   };
 
   const handleSearchKeyDown = (e) => {

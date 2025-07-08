@@ -36,6 +36,7 @@ export default function Input({
       </label>
 
       <input
+        id="command"
         type="text"
         className={styles.input}
         value={isReadOnly ? command : inputValue}
@@ -44,6 +45,9 @@ export default function Input({
         disabled={isReadOnly}
         ref={inputRef}
         autoFocus={!isReadOnly}
+        autoComplete="off"
+        spellCheck={false}
+        tabIndex={0}
       />
     </form>
   );

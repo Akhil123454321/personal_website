@@ -337,7 +337,52 @@ export const CONTENTS = {
 
   // calling the functions to get the projects and contacts
   projects: getProjects,
-  contact: getContacts,
+
+  contact: async (rawCommand) => {
+    const trimmed = rawCommand.trim();
+
+    // Case 1: Just `contact` → return contact list
+    if (trimmed === "contact") {
+      return await getContacts();
+    }
+
+    // Case 2: Check for `>> contact --email` structure
+    const redirectMatch = trimmed.match(/^(.*?)>>\s*contact\s+--email\s+(.*)$/);
+    if (!redirectMatch) {
+      return `⚠️ Usage: "your message here" >> contact --email --name="Your Name" --from="your@email.com"`;
+    }
+
+    const message = redirectMatch[1].trim().replace(/^"|"$/g, ""); // remove quotes around message if present
+    const flags = redirectMatch[2];
+
+    const nameMatch = flags.match(/--name="([^"]+)"/);
+    const fromMatch = flags.match(/--from="([^"]+)"/);
+
+    const name = nameMatch?.[1] || "";
+    const from = fromMatch?.[1] || "";
+
+    if (!message || !name || !from) {
+      return "⚠️ Please provide a message, --name, and --from fields.";
+    }
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message, name, from }),
+      });
+
+      if (res.ok) {
+        return "📬 Your message was sent successfully!";
+      } else {
+        const error = await res.json();
+        return `❌ Failed to send: ${error.error || "Unknown error"}`;
+      }
+    } catch (err) {
+      console.error("Request error:", err);
+      return "❌ Error sending your message. Try again later.";
+    }
+  },
 
   // function to render the pdf resume
   resume: () => {
