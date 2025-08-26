@@ -12,7 +12,7 @@ export default function Home() {
       </h1>
       <p>
         Visit{" "}
-        <a href="../normal_website/index.html" target="_blank" rel="noreferrer">
+        <a href="../normal_website/normal_index.html" target="_blank" rel="noreferrer">
           Normal website
         </a>
       </p>

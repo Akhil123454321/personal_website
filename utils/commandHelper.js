@@ -104,12 +104,11 @@ export const CONTENTS = {
   help: () =>
     COMMANDS.map(
       (command) => `<div style="display: flex; justify-content: space-between;">
-        <p style="font-size: 15px">${command.command}</p>
-        <p>${command.description}</p>
+        <p style="font-size: 15px; margin: 0;">${command.command}</p>
+        <p style="margin: 0;">${command.description}</p>
       </div>`
     ).join("") +
-    `<br />
-      <div class="command">Type one of the above to view. For eg. <span style="color: var(--secondary)">about</span></div>`,
+    `<div class="command" style="margin-top: 8px;">Type one of the above to view. For eg. <span style="color: var(--secondary)">about</span></div>`,
   
   // function to execute the experience command
   about: () => `My name is Akhil. I am a ${getAge(
@@ -137,10 +136,16 @@ export const CONTENTS = {
   "experience --internships": () => `
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <p style="font-size: 15px; font-weight: bold; margin: 0;">Crowe: Data Intelligence Intern</p>
+          <p style="font-size: 15px; font-weight: bold; margin: 0;">Crowe: Data Intelligence & Artificial Intelligence Intern</p>
           <p style="margin: 0; font-size: 14px; color: #aaa;">June 2025 - Present</p>
         </div>
-        <p style="margin-top: 6px; font-size: 14px;"></p>
+        <p style="margin-top: 6px; font-size: 14px;">
+          I developed two production-ready agents:
+          <ul>
+            <li> Data Quality Agent: This agent was responsible for collecting metadata of tables/columns in a database and modifying the descriptions based on data quality check results. The agent would convert prewritten data quality checks - in the form of YAML templates - to jinja templates and then SQL queries which would be executed. The agent would also generate new data quality checks based on the existing descriptions of the columns/tables. The results of all these checks would be used to update the description of the columns/tables in the metadata. </li>
+            <li> Agentic RAG System: This system was designed to work with Crowe's multi-agentic platform and its main goal is to help with private equity (PE) related questions partners & clients might have. It was developed using semantic kernel, has a custom retrieval skill - that is a combination of cosine similarity, LDA, and TF-IDF - and a custom generation skill - that has a context engineering pipeline to wash through the retrieved data. I was also leading the R&D for a custom memory and context management module that can be mounted onto any production-ready agent to more efficiently manage context and memory usage. All of this was backed by a custom built & trained lightbox LLM model that balanced the use of retrieved information from the provided data source and the internet. I was able to contribute 2 white-papers to the team's knowledge base. </li>
+          </ul>
+        </p>
       </div>
 
       <div style="margin-bottom: 24px;">

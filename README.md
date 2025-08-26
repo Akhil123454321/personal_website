@@ -12,3 +12,4 @@
 9. implement modification function  
 ~~10. fix `ctrl-c` functionality~~
 11. Implement a `manual` command --> provides instructions/documentation on how to use the website
+12. Implement `ctrl-d` --> closes the website
