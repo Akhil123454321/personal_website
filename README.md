@@ -4,7 +4,7 @@
 ~~1. Complete the `getProjects` function to fetch and display projects~~
 ~~2. Add up and down arrow key navigation functionality~~
 ~~3. Add `ctrl-l` functionality to clear the terminal screen~~
-4. Fix `normal website` 
+~~4. Fix `normal website` ~~
 ~~5. Add `ctrl-r` functionality~~
 ~~6. add tab completion~~
 7. implement man pages for each of the commands
@@ -12,4 +12,4 @@
 9. implement modification function  
 ~~10. fix `ctrl-c` functionality~~
 11. Implement a `manual` command --> provides instructions/documentation on how to use the website
-12. Implement `ctrl-d` --> closes the website
+12. Convert into an application where other people can make their own profiles
