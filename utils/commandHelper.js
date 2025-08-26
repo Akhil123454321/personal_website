@@ -56,6 +56,10 @@ const COMMANDS = [
     description: "Contact Me",
   },
   {
+    command: "contact --email",
+    description: "Send me an email",
+  },
+  {
     command: "clear",
     description: "Clear terminal",
   },
@@ -393,6 +397,50 @@ export const CONTENTS = {
   //function to render error message for unknown commands
   error: (input) =>
     `<div class="help-command">sh: Unknown command: ${input}</div><div class="help-command">See \`help\` for info`,
+
+  // function to send an email
+  "contact": async (rawCommand) => {
+    if (!rawCommand.includes("--email")) {
+      return getContacts(); // fallback to static contact info
+    }
+
+    // Match the flags and the message
+    const match = rawCommand.match(/^contact\s+--email\s+(.*?)>>\s*"(.*)"$/);
+    if (!match) {
+      return `⚠️ Usage: contact --email --name="Your Name" --from="email@example.com" >> "Your message here"`;
+    }
+
+    const flags = match[1];
+    const message = match[2];
+
+    const nameMatch = flags.match(/--name="([^"]+)"/);
+    const emailMatch = flags.match(/--from="([^"]+)"/);
+
+    const name = nameMatch?.[1] || "";
+    const from = emailMatch?.[1] || "";
+
+    if (!name || !from || !message) {
+      return "⚠️ Please provide all fields: name, email, and message.";
+    }
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, from, message }),
+      });
+
+      if (res.ok) {
+        return "📬 Your message was sent successfully!";
+      } else {
+        const error = await res.json();
+        return `❌ Failed to send: ${error.error || "Unknown error"}`;
+      }
+    } catch (err) {
+      console.error("Request error:", err);
+      return "❌ Error sending your message. Try again later.";
+    }
+  }
 };
 
 
