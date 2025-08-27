@@ -1,10 +1,17 @@
 import styles from "./Output.module.css";
 
 export default function Output({ output }) {
-  return output ? (
+  if (!output) return null;
+
+  return (
     <div
-      className={styles.output}
+      style={{
+        whiteSpace: "pre-wrap",
+        wordWrap: "break-word",
+        fontSize: "14px",
+        lineHeight: "1.6",
+      }}
       dangerouslySetInnerHTML={{ __html: output }}
-    ></div>
-  ) : null;
+    />
+  );
 }

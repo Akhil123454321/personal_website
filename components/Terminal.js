@@ -153,6 +153,7 @@ export default function Terminal() {
             ]);
           }
         }
+      }
   };
 
   const handleSearchKeyDown = (e) => {

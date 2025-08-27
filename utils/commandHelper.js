@@ -157,7 +157,7 @@ export const CONTENTS = {
           I developed new features for an internal forecasting and monitoring tool at NiSource using .NET (C#), React, and MySQL. I collaborated with engineers to implement performance optimizations and apply critical patch fixes. Additionally, I designed AI solutions including a chatbot and a time-series prediction model using Python and Azure AI Studio. These tools, built with services like AI Bot Service, Language Studio, and AutoML, were aimed at improving forecasting accuracy and time planning.
         </p>
       </div>
-  `,
+  `.trim(),
   "experience --research": () => `
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
