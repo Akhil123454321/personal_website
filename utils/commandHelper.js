@@ -172,7 +172,7 @@ export const CONTENTS = {
           </ul>
         </p>
       </div>
-  `.trim(),x
+  `.trim(),
   "experience --research": () => `
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
