@@ -157,7 +157,22 @@ export const CONTENTS = {
           I developed new features for an internal forecasting and monitoring tool at NiSource using .NET (C#), React, and MySQL. I collaborated with engineers to implement performance optimizations and apply critical patch fixes. Additionally, I designed AI solutions including a chatbot and a time-series prediction model using Python and Azure AI Studio. These tools, built with services like AI Bot Service, Language Studio, and AutoML, were aimed at improving forecasting accuracy and time planning.
         </p>
       </div>
-  `.trim(),
+
+      <div style="margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <p style="font-size: 15px; font-weight: bold; margin: 0;">Cummins: Analytics & Artificial Intelligence Intern</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">October 2025 - Present</p>
+        </div>
+        <p style="margin-top: 6px; font-size: 14px;">
+          I contributed to enterprise-level data intelligence initiatives through:
+          <ul>
+            <li> Developing a Python-based data governance agent to automatically tag and document Snowflake databases using hierarchical metadata structures. </li>
+            <li> Supporting the migration of applications from legacy data pipelines to modern SAS and cloud platforms by conducting rigorous testing and data validation. </li>
+            <li> Building interactive Streamlit and Power BI dashboards to visualize data lineage, tag coverage, and governance metrics across business units, enabling transparent insight into data ecosystem health. </li>
+          </ul>
+        </p>
+      </div>
+  `.trim(),x
   "experience --research": () => `
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
