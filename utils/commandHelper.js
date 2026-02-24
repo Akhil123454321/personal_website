@@ -111,11 +111,13 @@ export const CONTENTS = {
     `<div class="command" style="margin-top: 8px;">Type one of the above to view. For eg. <span style="color: var(--secondary)">about</span></div>`,
   
   // function to execute the experience command
-  about: () => `My name is Akhil. I am a ${getAge(
-    "December 8, 2003"
-  )} year old aspiring machine learning engineer and full-stack developer. I am currently based in the United States studying in Purdue University, Indiana, majoring in Computer Science - Machine Intelligence and Applied Statistics. 
+  about: () => `Hi, I'm Akhil — a ${getAge("December 8, 2003")} year old ML engineer and full-stack developer based in the United States. I completed my BS in Computer Science & Applied Statistics at Purdue University (Dec 2025) and am currently pursuing my MS in CS, specializing in Machine Intelligence and Security.
     <br/><br/>
-    I love coding in Python, C and JavaScript and have worked with frameworks and libraries like TensorFlow, PyTorch, scikit-learn, NodeJS, ExpressJS, and Django. I currently use NextJS, Laravel, and NodeJS in a lot of my projects, and leverage machine learning tools such as TensorFlow and PyTorch for ML engineering tasks.
+    I'm currently an <b>AI & Data Science Associate at PwC</b>. Before that I interned at Cummins (data governance agents, Snowflake), Crowe LLP (agentic RAG systems, LLM memory modules), and CGI (forecasting tools, Azure AI). On the research side, I've worked on clinical AI for HIV triage using LLaMA and DeepSeek, child speech transcription with RNN-T models, and diffusion models for multi-agent path planning.
+    <br/><br/>
+    I build with Python, TypeScript, and C day-to-day — across ML (PyTorch, TensorFlow, scikit-learn), full-stack (Next.js, FastAPI, React), and data engineering (Snowflake, Semantic Kernel, PostgreSQL). Some recent projects: an AI DJ assistant powered by Spotify and FastAPI, a multi-agent research OS on top of arXiv, and a published agentic CLI for local LLMs via Ollama.
+    <br/><br/>
+    Outside of engineering I've TA'd for 800+ students across four CS courses at Purdue, served as a Resident Assistant for a 50+ person dorm community, and taught Python to 5th graders.
   `,
 
   //function to execute the experience command
