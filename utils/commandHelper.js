@@ -8,8 +8,12 @@ const COMMANDS = [
     description: "My Work Experience",
     flags: [
       {
+        flag: "--roles",
+        description: "My full-time roles and experience"
+      },
+      {
         flag: "--internships",
-        description: "My internships and work experience",
+        description: "My internships and part-time work experience",
       },
       {
         flag: "--research",
@@ -133,11 +137,29 @@ export const CONTENTS = {
   },
 
   // function to execute the experience command with flags
+  "experience --roles": () => `
+    <div style="margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <p style="font-size: 15px; font-weight: bold; margin: 0;">PwC: AI & Data Science Associate</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Jan 2026 - Present</p>
+        </div>
+        <p style="margin-top: 6px; font-size: 14px;">
+          Current position.
+        </p>
+      </div>
+      <div style="margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <p style="font-size: 15px; font-weight: bold; margin: 0;">Purdue University: Undergraduate Research Assistant</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">May 2025 - Present</p>
+        </div>
+        <p style="margin-top: 6px; font-size: 14px;">Working with Professor Abulhair Saparov on a clinical AI research project aimed at automating triage recommendations for HIV patients using large language models (LLMs). Benchmarking models such as LLaMA 3.3 and DeepSeek R1 on real clinical data and developing infrastructure for model safety, including human-in-the-loop correction pipelines.</p>
+      </div>
+  `.trim(),
   "experience --internships": () => `
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Crowe: Data Intelligence & Artificial Intelligence Intern</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">June 2025 - Present</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">June 2025 - August 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px;">
           I developed two production-ready agents:
@@ -206,7 +228,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Resident Assistant</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">August 2024 – Present</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">August 2024 – December 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           As a resident assistant of Purdue's Cary Quadrangle dorm, I managed a shared annual budget of $96,000 to coordinate events focused on diversity, mental health, financial wellness, and career development. I built strong personal relationships and conducted quarterly check-ins to support a diverse community of over 50 students from 20+ states and 5 countries. I also served as an on-call resource, responding to concerns raised by residents, colleagues, or supervisors to maintain a safe and supportive living environment.
@@ -216,7 +238,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Teaching Assistant</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">January 2024 – Present</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">January 2024 – December 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           I supported over 800 students by leading weekly lab sessions and office hours, helping them understand course concepts, resolve project-related questions, and follow proper coding standards. I actively engaged with students on the EdStem communication portal by providing timely responses and maintaining clear communication around project deadlines. Additionally, I contributed to course development by assisting with quiz logistics, grading, and helping create and test all student assignments. 
@@ -236,7 +258,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Python Instructor</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">March 2024 – Present</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">March 2024 – December 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           Worked with Wonderland Education Inc. as a Python instructor, where I instructed 5th grade students in both fundamental and advanced Python programming concepts. I developed and delivered engaging curriculum modules tailored to their skill levels and interests, creating a supportive and interactive learning environment. I also provided personalized guidance and feedback to nurture their creativity and strengthen their problem-solving skills.
@@ -246,22 +268,6 @@ export const CONTENTS = {
 
   // function to execute the education command
   education: () => `
-    <div style="margin-bottom: 24px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <p style="font-size: 15px; font-weight: bold; margin: 0;">MS CS - Purdue University</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">Jan 2024 – Dec 2026</p>
-        </div>
-        <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
-          Relevant Coursework:
-          <ul>
-            <li>CS 57100: Artificial Intelligence</li>
-            <li>CS 57700: Natural Language Processing</li>
-            <li>CS 57800: Statistical Machine Learning</li>
-            <li>CS 59200-MLS: Machine Learning Systems</li>
-            <li>CS 59300-CVD: Computer Vision with Deep Learning</li>
-        </p>
-      </div>
-
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">BS CS, Applied Statistics - Purdue University</p>
@@ -279,7 +285,11 @@ export const CONTENTS = {
             <li>CS 25100: Data Structures and Algorithms</li>
             <li>STAT 51200: Applied Regression Analysis</li>
             <li>STAT 42000: Introduction to Time Series Analysis</li>
-          
+            <li>CS 57100: Artificial Intelligence</li>
+            <li>CS 57700: Natural Language Processing</li>
+            <li>CS 57800: Statistical Machine Learning</li>
+            <li>CS 59200-MLS: Machine Learning Systems</li>
+            <li>CS 59300-CVD: Computer Vision with Deep Learning</li>
           <br>
           Activities and societies: Boiler Blockchain, ML@Purdue, Purdue Hackers, ICMAPActivities and societies: Boiler Blockchain, ML@Purdue, Purdue Hackers, ICMAP
 

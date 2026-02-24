@@ -6,7 +6,7 @@ export default function Output({ output }) {
   return (
     <div
       style={{
-        whiteSpace: "pre-wrap",
+        whiteSpace: "normal",
         wordWrap: "break-word",
         fontSize: "14px",
         lineHeight: "1.6",
