@@ -4,128 +4,258 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akhil Kasturi | Portfolio</title>
- <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap');
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap');
 
-  body {
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-    background: #f5f7fa;
-    color: #2c3e50;
-  }
+    body {
+      margin: 0;
+      font-family: 'Source Sans Pro', sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background: #f5f7fa;
+      color: #2c3e50;
+    }
 
-  .sidebar {
-    width: 300px;
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    color: white;
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  }
+    .sidebar {
+      width: 280px;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      display: flex;
+      flex-shrink: 0;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.25rem;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
 
-  .sidebar img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 3px solid white;
-  }
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid white;
+      object-fit: cover;
+    }
 
-  .sidebar h1 {
-    font-family: 'Roboto Slab', serif;
-    font-size: 1.6rem;
-    margin-bottom: 0.75rem;
-  }
+    .sidebar h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+      text-align: center;
+    }
 
-  .sidebar a {
-    color: #ecf0f1;
-    text-decoration: none;
-    margin-top: 0.5rem;
-    display: block;
-    font-size: 0.95rem;
-  }
+    .sidebar .tagline {
+      font-size: 0.82rem;
+      opacity: 0.8;
+      text-align: center;
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
 
-  .sidebar a:hover {
-    text-decoration: underline;
-  }
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+    }
 
-  .main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    background: #f5f7fa;
-    min-width: 0;
-    min-height: 0;
-  }
+    .sidebar-links a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
 
-  .tabs {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-  }
+    .sidebar-links a:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
 
-  .tab {
-    background: #e0e0e0;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s, color 0.3s;
-  }
+    .main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      background: #f5f7fa;
+      min-width: 0;
+      min-height: 0;
+    }
 
-  .tab:hover {
-    background: #4ca1af;
-    color: white;
-  }
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
 
-  .tab.active {
-    background: #2c3e50;
-    color: white;
-  }
+    .tab {
+      background: #e0e0e0;
+      padding: 0.45rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, color 0.2s;
+    }
 
-  .content {
-    flex-grow: 1;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  }
+    .tab:hover {
+      background: #4ca1af;
+      color: white;
+    }
 
-  .hidden {
-    display: none;
-  }
+    .tab.active {
+      background: #2c3e50;
+      color: white;
+    }
 
-  h3 {
-    color: #34495e;
-    margin-top: 1.25rem;
-  }
+    .content {
+      flex-grow: 1;
+      background: white;
+      padding: 1.75rem 2rem;
+      border-radius: 10px;
+      overflow-y: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
 
-  ul li {
-    margin-bottom: 0.5rem;
-  }
+    .hidden { display: none; }
 
-  a {
-    color: #4ca1af;
-  }
-</style>
+    /* ── Typography ── */
+    h3 {
+      color: #2c3e50;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.2rem 0;
+    }
+
+    .entry-meta {
+      font-size: 0.85rem;
+      color: #7f8c8d;
+      margin: 0 0 0.5rem 0;
+    }
+
+    ul {
+      margin: 0.4rem 0 0 0;
+      padding-left: 1.25rem;
+    }
+
+    ul li {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    a { color: #4ca1af; }
+
+    /* ── Section category headers ── */
+    .section-category {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #4ca1af;
+      border-bottom: 1px solid #e8ecef;
+      padding-bottom: 0.3rem;
+      margin: 1.5rem 0 1rem 0;
+    }
+
+    .section-category:first-child {
+      margin-top: 0;
+    }
+
+    /* ── Experience entries ── */
+    .entry {
+      margin-bottom: 1.25rem;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    /* ── Skill chips ── */
+    .skill-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .skill-group-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7f8c8d;
+      margin-bottom: 0.6rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .chip {
+      background: #eef6f8;
+      color: #2c7a8a;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid #c8e6ec;
+    }
+
+    /* ── Project cards ── */
+    .project-card {
+      border: 1px solid #e8ecef;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-card h3 {
+      margin: 0;
+    }
+
+    .project-card p {
+      font-size: 0.93rem;
+      line-height: 1.55;
+      color: #4a5568;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .project-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #4ca1af;
+      text-decoration: none;
+    }
+
+    .project-link:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
 
   <div class="sidebar">
     <img src="/normal_website/images/profile.jpg" alt="Akhil Kasturi" />
     <h1>Akhil Kasturi</h1>
-    <a href="mailto:akhilkasturiwork@proton.me">Email</a>
-    <a href="https://linkedin.com/in/akhil-sagaran-kasturi" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Akhil123454321" target="_blank">GitHub</a>
+    <p class="tagline">AI & Data Science · Full-Stack · ML Research</p>
+    <div class="sidebar-links">
+      <a href="mailto:akhilkasturiwork@proton.me">✉ Email</a>
+      <a href="https://linkedin.com/in/akhil-sagaran-kasturi" target="_blank">in LinkedIn</a>
+      <a href="https://github.com/Akhil123454321" target="_blank">⌥ GitHub</a>
+    </div>
   </div>
 
   <div class="main">
@@ -139,155 +269,316 @@
       <div class="tab" data-tab="contact">contact</div>
     </div>
 
-  <div class="content" id="about">
-    <p>
-      I am <strong>Akhil Sagaran Kasturi</strong>, a driven and multidisciplinary Computer Science student currently pursuing my Master’s degree at <strong>Purdue University</strong>, specializing in <em>Machine Intelligence</em> and <em>Security</em>. With a CGPA of 3.8/4.0 and consistent recognition on the Dean’s List, I bring both academic rigor and real-world technical experience to the table. My work sits at the intersection of artificial intelligence, full-stack software engineering, and research-driven problem solving.
+    <div class="content" id="about">
+      <p>
+        I am <strong>Akhil Sagaran Kasturi</strong>, a driven and multidisciplinary Computer Science student currently pursuing my Master's degree at <strong>Purdue University</strong>, specializing in <em>Machine Intelligence</em> and <em>Security</em>. With a CGPA of 3.8/4.0 and consistent recognition on the Dean's List, I bring both academic rigor and real-world technical experience to the table. My work sits at the intersection of artificial intelligence, full-stack software engineering, and research-driven problem solving.
 
-      <br><br>
+        <br><br>
 
-      My technical journey spans from developing agentic Retrieval-Augmented Generation (RAG) systems and fine-tuned LLMs at <strong>Crowe LLP</strong>, to researching clinical triage systems using LLMs with faculty at Purdue. Whether it's engineering a multi-agent data quality pipeline using SQL, YAML, Jinja and UI layers, or designing a standalone memory module for generative AI models, I’ve demonstrated initiative and depth in both applied AI and systems-level development.
+        My technical journey spans from developing agentic Retrieval-Augmented Generation (RAG) systems and fine-tuned LLMs at <strong>Crowe LLP</strong>, to researching clinical triage systems using LLMs with faculty at Purdue. Whether it's engineering a multi-agent data quality pipeline using SQL, YAML, Jinja and UI layers, or designing a standalone memory module for generative AI models, I've demonstrated initiative and depth in both applied AI and systems-level development.
 
-      <br><br>
+        <br><br>
 
-      Beyond research and internships, I have built end-to-end projects including a <strong>NLP-powered code linter</strong> for C programs, a <strong>Chrome extension for real-time interview feedback</strong>, and a <strong>college recommender web app</strong> using React, GPT APIs, and clustering algorithms. I also enjoy working with students as a <strong>teaching assistant</strong> across multiple core CS courses, and serve as a <strong>Resident Assistant</strong> for over 50 diverse students.
+        Beyond research and internships, I have built end-to-end projects including a <strong>NLP-powered code linter</strong> for C programs, a <strong>Chrome extension for real-time interview feedback</strong>, and a <strong>college recommender web app</strong> using React, GPT APIs, and clustering algorithms. I also enjoy working with students as a <strong>teaching assistant</strong> across multiple core CS courses, and serve as a <strong>Resident Assistant</strong> for over 50 diverse students.
 
-      <br><br>
+        <br><br>
 
-      I thrive in collaborative, high-impact environments and am constantly seeking opportunities to apply cutting-edge research and engineering to solve meaningful real-world challenges.
-    </p>
-  </div>
+        I thrive in collaborative, high-impact environments and am constantly seeking opportunities to apply cutting-edge research and engineering to solve meaningful real-world challenges.
+      </p>
+    </div>
 
     <div class="content hidden" id="experience">
-        <h3>AI & Data Science Associate, PwC</h3>
-        <p><em>Jan 2026 – Present</em></p>
-        <ul>
-            <li>Current full-time position.</li>
-        </ul>
 
-        <h3>Undergraduate Research Assistant, Purdue University</h3>
-        <p><em>May 2025 – Dec 2025</em></p>
-        <ul>
-            <li>Working on a clinical AI project to automate triage decisions for HIV patients using large language models (LLaMA 3.3, DeepSeek R1).</li>
-            <li>Designed and tested human-in-the-loop correction systems for increasing safety and recall in real-world deployments.</li>
-        </ul>
+      <div class="section-category">Full-Time</div>
 
-        <h3>Analytics and Artificial Intelligence Intern, Cummins</h3>
-        <p><em>Oct 2025 – Nov 2025</em></p>
+      <div class="entry">
+        <div class="entry-header">
+          <h3>AI & Data Science Associate, PwC</h3>
+          <span class="entry-meta">Jan 2026 – Present</span>
+        </div>
         <ul>
-            <li>Built a data governance agent in Python to automatically tag and document Snowflake databases using hierarchical metadata.</li>
-            <li>Supported application migration from legacy pipelines to SAS and cloud platforms through testing and data validation.</li>
-            <li>Developed Streamlit and Power BI dashboards to visualize data lineage, tag coverage, and governance metrics across business units.</li>
+          <li>Current full-time position.</li>
         </ul>
+      </div>
 
-        <h3>Data Analytics & Artificial Intelligence Intern, Crowe LLP</h3>
-        <p><em>Jun 2025 – Aug 2025</em></p>
-        <ul>
-            <li>Designed and implemented a multi-agent Data Quality Analysis system leveraging LLMs to generate quality checks from metadata, convert them to YAML, Jinja templates, and SQL, and dynamically update table/column descriptions based on results; built supporting UI, testing harness, and debugging tools.</li>
-            <li>Led R&D on LLM memory and context management modules, benchmarking standalone memory layers and developing scaling laws; findings integrated into Crowe's internal knowledge base through two technical whitepapers.</li>
-            <li>Developed a custom agentic RAG pipeline using Semantic Kernel with modular retrieval and generation skills, featuring iterative context engineering for improved relevance and control.</li>
-        </ul>
-        
-        <h3>Software Development Intern, CGI</h3>
-        <p><em>Jun 2024 – Aug 2024</em></p>
-        <ul>
-            <li>Built features for an internal forecasting tool using .NET (C#), React, and MySQL.</li>
-            <li>Researched and implemented Azure-based AI models (chatbot, time-series forecasting) to improve business logic automation.</li>
-        </ul>
+      <div class="section-category">Research</div>
 
-        <h3>Resident Assistant, Purdue University Residences</h3>
-        <p><em>Aug 2024 – Dec 2025</em></p>
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Undergraduate Research Assistant, Purdue University</h3>
+          <span class="entry-meta">May 2025 – Dec 2025</span>
+        </div>
         <ul>
-            <li>Managed a $96K annual budget to plan events focused on mental health, diversity, and professional growth for 50+ residents.</li>
-            <li>Acted as first responder to conflict resolution and emergency situations in a multicultural housing environment.</li>
+          <li>Working on a clinical AI project to automate triage decisions for HIV patients using large language models (LLaMA 3.3, DeepSeek R1).</li>
+          <li>Designed and tested human-in-the-loop correction systems for increasing safety and recall in real-world deployments.</li>
         </ul>
+      </div>
 
-        <h3>Undergraduate Teaching Assistant, Purdue CS</h3>
-        <p><em>Jan 2024 – Dec 2025</em></p>
-        <ul>
-            <li>Supported 800+ students across labs and office hours, while also helping build and grade course materials.</li>
-            <li>Provided guidance on programming style, code quality, and debugging skills.</li>
-        </ul>
+      <div class="section-category">Internships</div>
 
-        <h3>Python Instructor, Wonderland Education</h3>
-        <p><em>Mar 2024 – Dec 2025</em></p>
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Analytics and Artificial Intelligence Intern, Cummins</h3>
+          <span class="entry-meta">Oct 2025 – Nov 2025</span>
+        </div>
         <ul>
-            <li>Taught Python to 5th grade students through interactive coding challenges and creative projects.</li>
-            <li>Customized curricula to suit different learning speeds and encouraged independent exploration.</li>
+          <li>Built a data governance agent in Python to automatically tag and document Snowflake databases using hierarchical metadata.</li>
+          <li>Supported application migration from legacy pipelines to SAS and cloud platforms through testing and data validation.</li>
+          <li>Developed Streamlit and Power BI dashboards to visualize data lineage, tag coverage, and governance metrics across business units.</li>
         </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Data Analytics & Artificial Intelligence Intern, Crowe LLP</h3>
+          <span class="entry-meta">Jun 2025 – Aug 2025</span>
+        </div>
+        <ul>
+          <li>Designed and implemented a multi-agent Data Quality Analysis system leveraging LLMs to generate quality checks from metadata, convert them to YAML, Jinja templates, and SQL, and dynamically update table/column descriptions based on results; built supporting UI, testing harness, and debugging tools.</li>
+          <li>Led R&D on LLM memory and context management modules, benchmarking standalone memory layers and developing scaling laws; findings integrated into Crowe's internal knowledge base through two technical whitepapers.</li>
+          <li>Developed a custom agentic RAG pipeline using Semantic Kernel with modular retrieval and generation skills, featuring iterative context engineering for improved relevance and control.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Software Development Intern, CGI</h3>
+          <span class="entry-meta">Jun 2024 – Aug 2024</span>
+        </div>
+        <ul>
+          <li>Built features for an internal forecasting tool using .NET (C#), React, and MySQL.</li>
+          <li>Researched and implemented Azure-based AI models (chatbot, time-series forecasting) to improve business logic automation.</li>
+        </ul>
+      </div>
+
+      <div class="section-category">Leadership & Teaching</div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Resident Assistant, Purdue University Residences</h3>
+          <span class="entry-meta">Aug 2024 – Dec 2025</span>
+        </div>
+        <ul>
+          <li>Managed a $96K annual budget to plan events focused on mental health, diversity, and professional growth for 50+ residents.</li>
+          <li>Acted as first responder to conflict resolution and emergency situations in a multicultural housing environment.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Undergraduate Teaching Assistant, Purdue CS</h3>
+          <span class="entry-meta">Jan 2024 – Dec 2025</span>
+        </div>
+        <ul>
+          <li>Supported 800+ students across labs and office hours, while also helping build and grade course materials.</li>
+          <li>Provided guidance on programming style, code quality, and debugging skills.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Python Instructor, Wonderland Education</h3>
+          <span class="entry-meta">Mar 2024 – Dec 2025</span>
+        </div>
+        <ul>
+          <li>Taught Python to 5th grade students through interactive coding challenges and creative projects.</li>
+          <li>Customized curricula to suit different learning speeds and encouraged independent exploration.</li>
+        </ul>
+      </div>
+
     </div>
 
     <div class="content hidden" id="education">
-        <h3>Purdue University – Bachelor of Science in Computer Science & Applied Statistics (Dual Degree)</h3>
-        <p><em>Expected Dec 2025</em><br/>
-        Minors: Mathematics<br/>
-        Specialization: Machine Learning<br/>
-        GPA: 3.80 / 4.0<br/>
-        Dean’s List and Semester Honors: Fall 2022 – Spring 2025</p>
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Purdue University – BS Computer Science & Applied Statistics (Dual Degree)</h3>
+          <span class="entry-meta">Aug 2022 – Dec 2025</span>
+        </div>
+        <p class="entry-meta" style="margin-top: 0.3rem;">
+          Minor: Mathematics &nbsp;·&nbsp; Specialization: Machine Learning &nbsp;·&nbsp; GPA: 3.80 / 4.0<br/>
+          Dean's List: Fall 2022 – Spring 2025
+        </p>
+      </div>
 
-        <h3>Indus International School Bangalore - International Baccalaureate (IB) Diploma</h3>
-        <p><em>August 2018 - May 2022</em><br/>
-        HL Subjects: Physics, Computer Science, Mathematics Analysis and Approaches<br/>
-        SL Subjects: English Language and Literature, Spanish B, Chemistry<br/>
-        IB Score: 43.0 / 45.0 <br/>
-        Subject awards for academic excellence in Computer Science, Math, Physics, and Chemistry</p>
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Indus International School Bangalore – IB Diploma</h3>
+          <span class="entry-meta">Aug 2018 – May 2022</span>
+        </div>
+        <p class="entry-meta" style="margin-top: 0.3rem;">
+          HL: Physics, Computer Science, Math AA &nbsp;·&nbsp; SL: English, Spanish B, Chemistry<br/>
+          IB Score: 43 / 45 &nbsp;·&nbsp; Subject awards in CS, Math, Physics, and Chemistry
+        </p>
+      </div>
     </div>
 
     <div class="content hidden" id="skills">
-        <p><strong>Languages:</strong> Python, Java, C, C++, C#, JavaScript, SQL, Shell, R</p>
-        <p><strong>Frameworks & Tools:</strong> .NET, NodeJS, ReactJS, MySQL, MongoDB, HTML/CSS, jQuery, Git</p>
-        <p><strong>Certifications:</strong> Azure AI Fundamentals, Azure AI Associate, Google Intro to Generative AI</p>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Languages</div>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">Java</span>
+          <span class="chip">C</span>
+          <span class="chip">C++</span>
+          <span class="chip">C#</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Shell</span>
+          <span class="chip">R</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Frameworks & Tools</div>
+        <div class="chips">
+          <span class="chip">PyTorch</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">scikit-learn</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Express.js</span>
+          <span class="chip">.NET</span>
+          <span class="chip">Semantic Kernel</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Snowflake</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Git</span>
+          <span class="chip">Azure AI</span>
+          <span class="chip">Streamlit</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Certifications</div>
+        <div class="chips">
+          <span class="chip">Azure AI Fundamentals</span>
+          <span class="chip">Azure AI Engineer Associate</span>
+          <span class="chip">Google: Intro to Generative AI</span>
+          <span class="chip">Visual Intelligence & Deep Learning</span>
+        </div>
+      </div>
+
     </div>
 
     <div class="content hidden" id="projects">
-        <h3>Pixel DJ AI (2026)</h3>
-        <p>
-        Built a full-stack AI DJ assistant that generates Spotify-ready sets from vibe prompts and seed tracks, visualizes transitions and reasoning in a Next.js interface, and continuously improves ranking through feedback-driven ML training with FastAPI and SQLite services.
-        </p>
 
-        <h3>Research OS (2026)</h3>
-        <p>
-        Built a full-stack research assistant that curates personalized arXiv feeds and enables paper-grounded Q&A via a multi-agent RAG pipeline (Planner, Retriever, Extractor, Verifier, Synthesizer), with Postgres-backed highlights and notes, and a Next.js UI on top of FastAPI services.
-        </p>
+      <div class="project-card">
+        <div class="project-card-header">
+          <h3>Pixel DJ AI</h3>
+          <a class="project-link" href="https://github.com/Akhil123454321/pixel_dj_ai" target="_blank">GitHub →</a>
+        </div>
+        <p>Built a full-stack AI DJ assistant that generates Spotify-ready sets from vibe prompts and seed tracks, visualizes transitions and reasoning in a Next.js interface, and continuously improves ranking through feedback-driven ML training with FastAPI and SQLite services.</p>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Spotify API</span>
+          <span class="chip">SQLite</span>
+        </div>
+      </div>
 
-        <h3>Agentic Ollama (2026)</h3>
-        <p>
-        Built and published a Python-based agentic CLI for Ollama that runs local LLMs with autonomous tool-calling, iterative code debugging, goal planning, long-term memory, and saved conversations and personas, with automatic Ollama install and start support.
-        </p>
+      <div class="project-card">
+        <div class="project-card-header">
+          <h3>Research OS</h3>
+          <a class="project-link" href="https://github.com/Akhil123454321/research_os" target="_blank">GitHub →</a>
+        </div>
+        <p>Built a full-stack research assistant that curates personalized arXiv feeds and enables paper-grounded Q&A via a multi-agent RAG pipeline (Planner, Retriever, Extractor, Verifier, Synthesizer), with Postgres-backed highlights and notes, and a Next.js UI on top of FastAPI services.</p>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">PostgreSQL</span>
+        </div>
+      </div>
 
-        <h3>NLP Linter (2025)</h3>
-        <p>
-        Created an NLP-based code linter for C programs in Purdue CS 240. Integrated Tree-sitter for AST parsing and fine-tuned CodeBERT with a custom BILEU tokenizer to detect and enforce coding standards.
-        </p>
+      <div class="project-card">
+        <div class="project-card-header">
+          <h3>Agentic Ollama</h3>
+          <a class="project-link" href="https://github.com/Akhil123454321/ollama-cli" target="_blank">GitHub →</a>
+        </div>
+        <p>Built and published a Python-based agentic CLI for Ollama that runs local LLMs with autonomous tool-calling, iterative code debugging, goal planning, long-term memory, and saved conversations and personas, with automatic Ollama install and start support.</p>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">Ollama</span>
+          <span class="chip">CLI</span>
+        </div>
+      </div>
 
-        <h3>HireHack (2024)</h3>
-        <p>
-        Developed a Chrome extension offering real-time interview feedback using facial emotion recognition, speech tone analysis, and lexical cues. Integrated a neural net to suggest personalized improvements.
-        </p>
+      <div class="project-card">
+        <div class="project-card-header">
+          <h3>NLP Linter</h3>
+          <a class="project-link" href="https://github.com/Akhil123454321/nlp_linter" target="_blank">GitHub →</a>
+        </div>
+        <p>Designed and implemented an NLP-powered linter to enforce coding standards in C programs for Purdue's CS 240 course. Leverages Tree-sitter for AST parsing, a custom BILEU tokenizer, and fine-tuned CodeBERT for analysis.</p>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">Rust</span>
+          <span class="chip">C</span>
+        </div>
+      </div>
 
-        <h3>UniLens (2023)</h3>
-        <p>
-        Built a full-stack college research app using ReactJS, NodeJS, and MongoDB. Leveraged GPT APIs and clustering algorithms to personalize school suggestions and support application planning.
-        </p>
+      <div class="project-card">
+        <div class="project-card-header">
+          <h3>HireHack</h3>
+          <a class="project-link" href="https://github.com/Akhil123454321/hirehack_deploy" target="_blank">GitHub →</a>
+        </div>
+        <p>Developed a Chrome extension that provides real-time interview feedback using facial emotion recognition, speech tone analysis, and lexical cues. Integrated a feed-forward neural network to generate live improvement suggestions.</p>
+        <div class="chips">
+          <span class="chip">JavaScript</span>
+          <span class="chip">Python</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+        </div>
+      </div>
 
-        <h3>Diabetic Retinopathy Analyzer (2021)</h3>
-        <p>
-        Created a CNN model in TensorFlow and Keras that classifies retinal scans by retinopathy severity and macular edema risk. Achieved 92% accuracy on a labeled dataset.
-        </p>
+      <div class="project-card">
+        <div class="project-card-header">
+          <h3>UniLens</h3>
+        </div>
+        <p>Built a full-stack web application to assist users in college research, offering personalized college lists, profile building, and essay refinement. Utilized ReactJS, NodeJS, GPT API, and MongoDB, incorporating a Weighted K-Means Clustering algorithm.</p>
+        <div class="chips">
+          <span class="chip">Node.js</span>
+          <span class="chip">React</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Express.js</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-header">
+          <h3>Diabetic Retinopathy Analyzer</h3>
+        </div>
+        <p>Created a CNN model with Keras and TensorFlow to predict retinopathy grade and macular edema risk from retinal scans, achieving 92% accuracy.</p>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">Keras</span>
+        </div>
+      </div>
+
     </div>
 
     <div class="content hidden" id="resume">
-        <p>You can download my full resume below:</p>
-        <p><a href="/resume.pdf" download>📄 Download Resume (PDF)</a></p>    
+      <p>You can download my full resume below:</p>
+      <p><a href="/resume.pdf" download>📄 Download Resume (PDF)</a></p>
     </div>
-    
+
     <div class="content hidden" id="contact">
-        <ul>
-            <li><strong>Email:</strong> <a href="mailto:akhilkasturiwork@proton.me">akhilkasturiwork@proton.me</a></li>
-            <li><strong>Phone:</strong> (317) 389-8250</li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/akhil-sagaran-kasturi" target="_blank">/akhil-sagaran-kasturi</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/Akhil123454321" target="_blank">@Akhil123454321</a></li>
-        </ul>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:akhilkasturiwork@proton.me">akhilkasturiwork@proton.me</a></li>
+        <li><strong>Phone:</strong> (317) 389-8250</li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/akhil-sagaran-kasturi" target="_blank">/akhil-sagaran-kasturi</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/Akhil123454321" target="_blank">@Akhil123454321</a></li>
+      </ul>
     </div>
+
   </div>
 
   <script>
@@ -298,7 +589,6 @@
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         contents.forEach(c => c.classList.add('hidden'));
-
         tab.classList.add('active');
         document.getElementById(tab.dataset.tab).classList.remove('hidden');
       });

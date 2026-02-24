@@ -44,18 +44,7 @@ export default function Terminal() {
     setHistoryIndex(-1);
     setCurrentInput("");
 
-    // Check for redirection format: message >> command
-    const redirectMatch = command.match(/^(.*?)>>\s*(.+)$/);
-    if (redirectMatch) {
-      const message = redirectMatch[1].trim();
-      const targetCommand = redirectMatch[2].trim();
-
-      if (targetCommand.startsWith("contact --email")) {
-        output = await CONTENTS.contact(command)
-      } else {
-        output = CONTENTS.error(escapeHTML(command));
-      }
-    } else if (command === "clear") {
+    if (command === "clear") {
       setLoading(false);
       setCommands([]);
       return;
