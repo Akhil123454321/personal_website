@@ -141,7 +141,7 @@ export const CONTENTS = {
     <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">PwC: AI & Data Science Associate</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">Jan 2026 - Present</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Jan 2026 – Present</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px;">
           Current position.
@@ -150,7 +150,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Purdue University: Undergraduate Research Assistant</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">May 2025 - Present</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">May 2025 – Dec 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px;">Working with Professor Abulhair Saparov on a clinical AI research project aimed at automating triage recommendations for HIV patients using large language models (LLMs). Benchmarking models such as LLaMA 3.3 and DeepSeek R1 on real clinical data and developing infrastructure for model safety, including human-in-the-loop correction pipelines.</p>
       </div>
@@ -159,7 +159,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Crowe: Data Intelligence & Artificial Intelligence Intern</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">June 2025 - August 2025</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Jun 2025 – Aug 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px;">
           I developed two production-ready agents:
@@ -173,7 +173,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">CGI: Software Engineering & DevOps Intern</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">June 2024 – August 2024</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Jun 2024 – Aug 2024</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           I developed new features for an internal forecasting and monitoring tool at NiSource using .NET (C#), React, and MySQL. I collaborated with engineers to implement performance optimizations and apply critical patch fixes. Additionally, I designed AI solutions including a chatbot and a time-series prediction model using Python and Azure AI Studio. These tools, built with services like AI Bot Service, Language Studio, and AutoML, were aimed at improving forecasting accuracy and time planning.
@@ -183,7 +183,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Cummins: Analytics & Artificial Intelligence Intern</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">October 2025 - Present</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Oct 2025 – Nov 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px;">
           I contributed to enterprise-level data intelligence initiatives through:
@@ -199,7 +199,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">NLP Research</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">May 2025 - Present</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">May 2025 – Dec 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px;">Working with Professor Abulhair Saparov on a clinical AI research project aimed at automating triage recommendations for HIV patients using large language models (LLMs). As part of this effort, I am benchmarking models such as LLaMA 3.3 and DeepSeek R1 on real clinical data to evaluate their accuracy and alignment with expert reasoning. I am also developing infrastructure for model safety, including human-in-the-loop correction pipelines. The project focuses on optimizing sensitivity to ensure scalable and reliable decision support in under-resourced healthcare settings.</p>
       </div>
@@ -207,7 +207,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">CAST VIP Team</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">January 2024 – December 2024</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Jan 2024 – Dec 2024</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           Worked in Dr. David Purpura's CAST VIP team, focussing on an efficient means of transcribing child-speech using state of the art machine learning methods including a GNN-FRU, conformer model, transformer model etc. I was responsible for developing and integrating a new pipeline focussed on an RNN-T (RNN Transducer) model for transcribing child speech. Furthermore, I was in charge of developing metrics for data visualization and analysis of the transcribed data, and custom evaluation metrics for the model performance.
@@ -217,7 +217,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Student Researcher</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">January 2024 – December 2024</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Jan 2024 – Dec 2024</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           Worked with PhD students in Dr. Aniket Bera's IDEAS lab that explored unique uses of generative AI - especially diffusion models. I was responsible for developing a bench mark diffusion algorithm for image generation, that aided in further developing an efficient diffusion model for multi-agent path planning. I also helped in data collection and analysis and hyperparemeter tuning of a diffusion model that helps generate dance sequences from lead videos and textual prompts specifying dance styles and steps.
@@ -228,7 +228,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Resident Assistant</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">August 2024 – December 2025</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Aug 2024 – Dec 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           As a resident assistant of Purdue's Cary Quadrangle dorm, I managed a shared annual budget of $96,000 to coordinate events focused on diversity, mental health, financial wellness, and career development. I built strong personal relationships and conducted quarterly check-ins to support a diverse community of over 50 students from 20+ states and 5 countries. I also served as an on-call resource, responding to concerns raised by residents, colleagues, or supervisors to maintain a safe and supportive living environment.
@@ -238,7 +238,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Teaching Assistant</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">January 2024 – December 2025</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Jan 2024 – Dec 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           I supported over 800 students by leading weekly lab sessions and office hours, helping them understand course concepts, resolve project-related questions, and follow proper coding standards. I actively engaged with students on the EdStem communication portal by providing timely responses and maintaining clear communication around project deadlines. Additionally, I contributed to course development by assisting with quiz logistics, grading, and helping create and test all student assignments. 
@@ -258,7 +258,7 @@ export const CONTENTS = {
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <p style="font-size: 15px; font-weight: bold; margin: 0;">Python Instructor</p>
-          <p style="margin: 0; font-size: 14px; color: #aaa;">March 2024 – December 2025</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Mar 2024 – Dec 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           Worked with Wonderland Education Inc. as a Python instructor, where I instructed 5th grade students in both fundamental and advanced Python programming concepts. I developed and delivered engaging curriculum modules tailored to their skill levels and interests, creating a supportive and interactive learning environment. I also provided personalized guidance and feedback to nurture their creativity and strengthen their problem-solving skills.
