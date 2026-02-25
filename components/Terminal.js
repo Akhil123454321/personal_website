@@ -37,6 +37,7 @@ export default function Terminal() {
       .replace(/'/g, "&#039;");
 
   const addCommand = async (command) => {
+    command = command.trim();
     let output;
     setLoading(true);
 
