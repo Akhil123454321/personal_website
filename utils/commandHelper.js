@@ -60,6 +60,10 @@ const COMMANDS = [
     description: "Contact Me",
   },
   {
+    command: "publications",
+    description: "My Research Publications",
+  },
+  {
     command: "clear",
     description: "Clear terminal",
   },
@@ -366,6 +370,21 @@ export const CONTENTS = {
       <b class="command">Indus Startup You: Applications of Design Thinking and Entrepreneurship 
     </div>
   `,
+
+  // function to execute the publications command
+  publications: () => `
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <a href="https://arxiv.org/abs/2605.15184" target="_blank" style="font-size: 15px; font-weight: bold; color: var(--secondary);">Is Grep All You Need? How Agent Harnesses Reshape Agentic Search</a>
+        <p style="margin: 0; font-size: 14px; color: #aaa;">May 2026</p>
+      </div>
+      <p style="margin-top: 6px; font-size: 14px; color: #aaa;">Sahil Sen, Akhil Kasturi, Elias Lumer, Anmol Gulati, Vamse Kumar Subbiah</p>
+      <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
+        Investigates how retrieval strategies interact with agent architecture in LLM-based systems. We find that grep generally yields higher accuracy than vector retrieval, but performance varies significantly depending on the agent harness and tool-calling approach — independent of the underlying data.
+      </p>
+      <p style="margin-top: 6px; font-size: 13px; color: #aaa;">arXiv:2605.15184 &nbsp;·&nbsp; cs.CL &nbsp;·&nbsp; CC BY 4.0</p>
+    </div>
+  `.trim(),
 
   // calling the functions to get the projects and contacts
   projects: getProjects,
