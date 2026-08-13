@@ -307,8 +307,7 @@ export const CONTENTS = {
             <li>CS 59200-MLS: Machine Learning Systems</li>
             <li>CS 59300-CVD: Computer Vision with Deep Learning</li>
           <br>
-          Activities and societies: Boiler Blockchain, ML@Purdue, Purdue Hackers, ICMAPActivities and societies: Boiler Blockchain, ML@Purdue, Purdue Hackers, ICMAP
-
+          Activities and societies: Boiler Blockchain, ML@Purdue, Purdue Hackers, ICMAP
         </p>
       </div>
   `,
