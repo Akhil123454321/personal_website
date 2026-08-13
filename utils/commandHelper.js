@@ -270,9 +270,18 @@ export const CONTENTS = {
 
   // function to execute the education command
   education: () => `
+       <div style="margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <p style="font-size: 15px; font-weight: bold; margin: 0;">MS Computer Science - Georgia Institute of Technology</p>
+          <p style="margin: 0; font-size: 14px; color: #aaa;">Aug 2026 - Present</p>
+        </div>
+      </div>
+
+      <br>
+      
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <p style="font-size: 15px; font-weight: bold; margin: 0;">BS CS, Applied Statistics - Purdue University</p>
+          <p style="font-size: 15px; font-weight: bold; margin: 0;">BS Computer Science, Applied Statistics - Purdue University</p>
           <p style="margin: 0; font-size: 14px; color: #aaa;">Aug 2022 - Dec 2025</p>
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
