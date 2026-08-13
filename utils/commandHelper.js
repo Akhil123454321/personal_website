@@ -275,6 +275,9 @@ export const CONTENTS = {
           <p style="font-size: 15px; font-weight: bold; margin: 0;">MS Computer Science - Georgia Institute of Technology</p>
           <p style="margin: 0; font-size: 14px; color: #aaa;">Aug 2026 - Present</p>
         </div>
+        <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
+          Specialization in Artificial Intelligence<br />
+        </p>
       </div>
 
       <br>
@@ -286,9 +289,11 @@ export const CONTENTS = {
         </div>
         <p style="margin-top: 6px; font-size: 14px; text-align: justify;">
           Minor in Mathematics<br />
-          GPA: 3.8/4.0<br />
-          Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024, Sprign 2025<br />
-          Relevant Coursework:
+          Concentration in Machine Inteligence <br />
+          <b>GPA:</b> 3.74/4.0<br />
+          <b>Dean's List:</b> Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025<br />
+          <b>Semester Honors:</b> Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024<br />
+          <b>Relevant Coursework:</b>
           <ul>
             <li>CS 37300: Data Mining and Machine Learning</li>
             <li>CS 44000: Large Scale Data Analytics</li>
