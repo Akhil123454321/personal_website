@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "airtable": "^0.12.2",
     "cors": "^2.8.5",
     "next": "^14.2.0",
     "nodemailer": "^7.0.3",
